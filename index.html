@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123d35">
+<title>মেসবাড়ি — ঘরভাড়া ব্যবস্থাপনা</title>
+<style>
+:root{--site-background:#f4f7f5;--site-primary:#123d35;--site-secondary:#dcebe4;--site-on-primary:#fff;--site-on-secondary:#153b33;--site-on-background:#182b26;--site-font-body:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;--site-font-heading:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;--site-heading-scale:1;--site-spacing-scale:1;--site-radius-scale:1;--site-decoration-opacity:1}
+*{box-sizing:border-box}body{margin:0;background:var(--site-background);color:var(--site-on-background);font-family:var(--site-font-body);line-height:1.5}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:10px 14px;background:var(--site-primary);color:white;font-weight:700}button.secondary{background:#e5eee9;color:#174238;border:1px solid #d0e0d8}button.danger{background:#fff0ed;color:#a33a2b;border:1px solid #f2d0c9}.app{min-height:100vh;background:var(--site-background)}header{background:var(--site-primary);color:white;padding:22px max(18px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.brand{display:flex;gap:12px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:#dcebe4;color:#123d35;display:grid;place-items:center;font-size:24px}.brand h1{font-size:22px;margin:0}.brand p{margin:1px 0 0;color:#c8ded5;font-size:13px}.role{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.role select{border-radius:10px;padding:9px;background:#fff;color:#183b33;border:0}.wrap{max-width:1120px;margin:auto;padding:24px 18px 44px}.intro{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:20px}.intro h2{margin:0;font-size:clamp(22px,3vw,30px)}.muted{color:#63766e;font-size:14px}.tag{display:inline-flex;align-items:center;background:#e1eee7;color:#205848;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700}.notice{background:#fff7df;border:1px solid #f0dfad;color:#725315;padding:12px 14px;border-radius:14px;margin-bottom:18px;font-size:13px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:20px}.stat,.panel{background:white;border:1px solid #e0e9e4;border-radius:18px;padding:18px;box-shadow:0 4px 18px #163f3008}.stat .label{font-size:13px;color:#65766e}.stat .value{font-size:25px;font-weight:800;margin-top:5px;letter-spacing:-.4px}.stat .small{font-size:12px;color:#77877f;margin-top:3px}.layout{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.panel h3{margin:0 0 14px;font-size:18px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}.panel-head h3{margin:0}.room-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.room{border:1px solid #dfe9e3;border-radius:14px;padding:14px}.room-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.room h4{margin:0;font-size:16px}.room .rent{font-weight:800;margin:8px 0 3px}.room p{margin:2px 0;font-size:13px;color:#65766e}.room .actions{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap}.room .actions button{font-size:12px;padding:7px 9px}.status{font-size:11px;border-radius:999px;padding:4px 8px;font-weight:800}.status.paid{background:#e0f4e8;color:#1b7046}.status.due{background:#fff0d7;color:#8b5c0b}.list{display:flex;flex-direction:column;gap:10px}.entry{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid #edf1ee}.entry:last-child{border:0}.entry strong{display:block;font-size:14px}.entry small{color:#74847c}.amount{font-weight:800;white-space:nowrap}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}.field label{font-size:13px;font-weight:700;color:#52645b}.field input,.field select{width:100%;border:1px solid #d4e0d9;background:#fbfdfb;border-radius:10px;padding:10px 11px;color:#183b33}.form-actions{display:flex;gap:8px;flex-wrap:wrap}.hidden{display:none!important}.empty{padding:20px;text-align:center;color:#75847c;font-size:14px}.receipt{border:1px dashed #a9c5b7;background:#f8fcf9;border-radius:14px;padding:15px}.receipt h4{margin:0 0 8px}.receipt p{margin:4px 0;font-size:13px}.paybox{background:#f4f9f6;border:1px solid #dbe9e1;padding:14px;border-radius:14px;margin-top:12px}.paybox p{font-size:13px;margin:5px 0}.footer{text-align:center;font-size:12px;color:#74847c;margin-top:22px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#123d35;color:white;padding:11px 16px;border-radius:12px;box-shadow:0 8px 30px #0002;z-index:5;max-width:90vw}.btn-small{font-size:12px;padding:7px 10px}.divider{height:1px;background:#edf1ee;margin:15px 0}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}}@media(max-width:480px){header{padding:16px}.wrap{padding:18px 12px 32px}.room-list{grid-template-columns:1fr}.formrow{grid-template-columns:1fr}.stat{padding:14px}.stat .value{font-size:21px}.role{width:100%;justify-content:space-between}}
+@media print{header,.intro,.notice,.stats,.layout,.footer,.no-print{display:none!important}#receiptPrint{display:block!important;max-width:700px;margin:20px auto;border:1px solid #bbb;padding:25px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+ <div class="brand"><div class="logo">⌂</div><div><h1>মেসবাড়ি</h1><p>মেস ও ব্যাচেলর বাসার ভাড়া ব্যবস্থাপনা</p></div></div>
+ <div class="role"><span style="font-size:13px">ব্যবহারকারী</span><select id="roleSelect" aria-label="ব্যবহারকারী নির্বাচন"><option value="owner">বাড়ির মালিক</option><option value="tenant">ভাড়াটিয়া</option></select></div>
+</header>
+<main class="wrap">
+ <div class="intro"><div><div class="tag">সহজ হিসাব · পরিষ্কার রেকর্ড</div><h2 id="pageTitle">বাড়ির হিসাব এক জায়গায়</h2><div class="muted" id="todayLine">মাসিক ভাড়া, আদায় ও বকেয়া দেখুন</div></div><button class="no-print" id="exportBtn" onclick="exportData()">ডেটা ব্যাকআপ ⤓</button></div>
+ <div class="notice"><strong>ডেমো সংস্করণ:</strong> তথ্য এই ব্রাউজারের ডিভাইসেই রাখা হয়। এটি এখনো লাইভ অনলাইন পেমেন্ট বা একাধিক ব্যবহারকারীর সিঙ্ক চালায় না। আসল পেমেন্ট নিতে নিরাপদ পেমেন্ট গেটওয়ে ও সার্ভার যুক্ত করতে হবে।</div>
+ <section id="ownerView">
+  <div class="stats">
+   <div class="stat"><div class="label">মোট ঘর</div><div class="value" id="totalRooms">4</div><div class="small">সর্বোচ্চ ৫টি ঘর দিয়ে শুরু</div></div>
+   <div class="stat"><div class="label">মাসিক মোট ভাড়া</div><div class="value" id="totalRent">৳ ১৬,০০০</div><div class="small">সব ঘরের নির্ধারিত ভাড়া</div></div>
+   <div class="stat"><div class="label">এই মাসে আদায়</div><div class="value" id="totalPaid">৳ ৮,০০০</div><div class="small">রেকর্ড করা পেমেন্ট</div></div>
+   <div class="stat"><div class="label">বকেয়া</div><div class="value" id="totalDue">৳ ৮,০০০</div><div class="small">এখনো আদায় হয়নি</div></div>
+  </div>
+  <div class="layout">
+   <section class="panel">
+    <div class="panel-head"><h3>ঘর ও ভাড়াটিয়া</h3><button id="addRoomToggle" onclick="toggleForm()">+ ঘর যোগ</button></div>
+    <form id="roomForm" class="hidden" onsubmit="addRoom(event)">
+     <div class="formrow"><div class="field"><label for="roomName">ঘর নম্বর / নাম</label><input id="roomName" required placeholder="যেমন: রুম ৫"></div><div class="field"><label for="tenantName">ভাড়াটিয়ার নাম</label><input id="tenantName" required placeholder="নাম লিখুন"></div></div>
+     <div class="formrow"><div class="field"><label for="tenantPhone">মোবাইল নম্বর</label><input id="tenantPhone" placeholder="01XXXXXXXXX" inputmode="tel"></div><div class="field"><label for="rentAmount">মাসিক ভাড়া (৳)</label><input id="rentAmount" type="number" min="0" required placeholder="4000"></div></div>
+     <div class="form-actions"><button type="submit">ঘর সংরক্ষণ</button><button type="button" class="secondary" onclick="toggleForm()">বাতিল</button></div>
+     <div class="divider"></div>
+    </form>
+    <div id="roomList" class="room-list"></div>
+   </section>
+   <section class="panel">
+    <div class="panel-head"><h3>ভাড়া আদায় রেকর্ড</h3></div>
+    <div id="paymentList" class="list"></div>
+    <div class="divider"></div>
+    <h3>পেমেন্ট যোগ করুন</h3>
+    <form id="paymentForm" onsubmit="recordPayment(event)">
+     <div class="field"><label for="paymentRoom">ঘর / ভাড়াটিয়া</label><select id="paymentRoom" required></select></div>
+     <div class="formrow"><div class="field"><label for="paymentAmount">টাকার পরিমাণ (৳)</label><input id="paymentAmount" type="number" min="1" required placeholder="4000"></div><div class="field"><label for="paymentMethod">মাধ্যম</label><select id="paymentMethod"><option>নগদ</option><option>বিকাশ</option><option>নগদ (Nagad)</option><option>ব্যাংক</option></select></div></div>
+     <div class="field"><label for="paymentRef">লেনদেন আইডি / নোট (ঐচ্ছিক)</label><input id="paymentRef" placeholder="যেমন: TrxID বা রসিদ নোট"></div>
+     <button type="submit">পেমেন্ট রেকর্ড ও রসিদ তৈরি</button>
+    </form>
+    <div id="receiptArea" class="hidden"></div>
+   </section>
+  </div>
+ </section>
+ <section id="tenantView" class="hidden">
+  <div class="stats">
+   <div class="stat"><div class="label">আপনার মাসিক ভাড়া</div><div class="value" id="tenantRent">—</div><div class="small">নির্বাচিত ডেমো ভাড়াটিয়া</div></div>
+   <div class="stat"><div class="label">পরিশোধিত</div><div class="value" id="tenantPaid">—</div><div class="small">রেকর্ড অনুযায়ী</div></div>
+   <div class="stat"><div class="label">বকেয়া</div><div class="value" id="tenantDue">—</div><div class="small">এই মাসের হিসাব</div></div>
+   <div class="stat"><div class="label">ঘর</div><div class="value" id="tenantRoom">—</div><div class="small">আপনার ঘরের তথ্য</div></div>
+  </div>
+  <div class="layout">
+   <section class="panel"><h3>আপনার ভাড়া হিসাব</h3><div class="field"><label for="tenantSelect">ভাড়াটিয়া নির্বাচন (ডেমো)</label><select id="tenantSelect" onchange="renderTenant()"></select></div><div id="tenantDetails"></div></section>
+   <section class="panel"><h3>অনলাইন পেমেন্ট নির্দেশনা</h3><p class="muted">এই ডেমোতে পেমেন্ট এখনো নেওয়া হয় না। নিচে প্রকৃত মালিকের পেমেন্ট নম্বর বসিয়ে দেওয়ার পরও পেমেন্ট নিশ্চিত করতে হবে সার্ভার/গেটওয়ে দিয়ে।</p><div class="paybox"><strong>বিকাশ / নগদ</strong><p>১. মালিকের নিশ্চিত করা নম্বরে নির্দেশনা অনুযায়ী পেমেন্ট করুন।</p><p>২. লেনদেন আইডি সংরক্ষণ করুন।</p><p>৩. মালিকের যাচাইয়ের পর রসিদ আপডেট হবে।</p><p><strong>সতর্কতা:</strong> এই নমুনা সাইটে কোনো টাকা পাঠাবেন না। এখানে বাস্তব পেমেন্ট সংযুক্ত নেই।</p></div></section>
+  </div>
+ </section>
+ <div class="footer">মেসবাড়ি · ব্যক্তিগত ভাড়া ব্যবস্থাপনার ডেমো · নিরাপদ অনলাইন ব্যবহারের জন্য সার্ভার ও লগইন প্রয়োজন</div>
+ <section id="receiptPrint" class="hidden"></section>
+</main>
+<div id="toast" class="toast hidden" role="status"></div>
+</div>
+<script>
+const initialRooms=[
+{id:1,name:"রুম ১",tenant:"রহিম উদ্দিন",phone:"017XXXXXXXX",rent:4000,paid:4000},
+{id:2,name:"রুম ২",tenant:"করিম হাসান",phone:"018XXXXXXXX",rent:4000,paid:0},
+{id:3,name:"রুম ৩",tenant:"সুমন মিয়া",phone:"019XXXXXXXX",rent:4500,paid:4500},
+{id:4,name:"রুম ৪",tenant:"খালি ঘর",phone:"",rent:3500,paid:0}
+];
+let rooms;
+let payments;
+try{rooms=JSON.parse(localStorage.getItem("mesbari_rooms_v2"))||initialRooms;payments=JSON.parse(localStorage.getItem("mesbari_payments_v2"))||[
+{id:1,roomId:1,amount:4000,method:"বিকাশ",ref:"ডেমো-১০০১",date:"২০২৬-১০-০৩"},
+{id:2,roomId:3,amount:4500,method:"নগদ",ref:"ডেমো-১০০২",date:"২০২৬-১০-০৫"}
+]}catch(e){rooms=initialRooms;payments=[]}
+function save(){localStorage.setItem("mesbari_rooms_v2",JSON.stringify(rooms));localStorage.setItem("mesbari_payments_v2",JSON.stringify(payments))}
+function money(n){return "৳ "+Number(n||0).toLocaleString("en-US")}
+function bnDate(){return new Date().toLocaleDateString("bn-BD",{year:"numeric",month:"long",day:"numeric"})}
+document.getElementById("todayLine").textContent="আজ "+bnDate()+" · মাসিক ভাড়া ও বকেয়ার হিসাব";
+function dueFor(r){return Math.max(0,r.rent-r.paid)}
+function toast(msg){let t=document.getElementById("toast");t.textContent=msg;t.classList.remove("hidden");setTimeout(()=>t.classList.add("hidden"),2400)}
+function render(){
+const active=rooms.filter(r=>r.tenant&&r.tenant!=="খালি ঘর");
+document.getElementById("totalRooms").textContent=rooms.length;
+document.getElementById("totalRent").textContent=money(active.reduce((s,r)=>s+r.rent,0));
+document.getElementById("totalPaid").textContent=money(active.reduce((s,r)=>s+Math.min(r.paid,r.rent),0));
+document.getElementById("totalDue").textContent=money(active.reduce((s,r)=>s+dueFor(r),0));
+const list=document.getElementById("roomList");
+list.innerHTML=rooms.map(r=>`<article class="room"><div class="room-top"><h4>${esc(r.name)}</h4><span class="status ${dueFor(r)===0&&r.tenant!=="খালি ঘর"?"paid":"due"}">${r.tenant==="খালি ঘর"?"খালি":dueFor(r)===0?"পরিশোধিত":"বকেয়া"}</span></div><div class="rent">${money(r.rent)} <span class="muted">/ মাস</span></div><p>ভাড়াটিয়া: ${esc(r.tenant)}</p><p>মোবাইল: ${esc(r.phone||"দেওয়া নেই")}</p><p>বকেয়া: <strong>${money(r.tenant==="খালি ঘর"?0:dueFor(r))}</strong></p><div class="actions"><button class="secondary" onclick="selectPayment(${r.id})">ভাড়া নিন</button><button class="secondary" onclick="editRoom(${r.id})">তথ্য বদল</button><button class="danger" onclick="removeRoom(${r.id})">মুছুন</button></div></article>`).join("")||'<div class="empty">এখনো কোনো ঘর যোগ করা হয়নি।</div>';
+const sel=document.getElementById("paymentRoom");let old=sel.value;sel.innerHTML=rooms.filter(r=>r.tenant!=="খালি ঘর").map(r=>`<option value="${r.id}">${esc(r.name)} — ${esc(r.tenant)}</option>`).join("");if([...sel.options].some(o=>o.value===old))sel.value=old;
+document.getElementById("paymentList").innerHTML=payments.slice().reverse().slice(0,6).map(p=>{let r=rooms.find(x=>x.id===p.roomId);return `<div class="entry"><div><strong>${esc(r?r.tenant:"মুছে ফেলা ঘর")}</strong><small>${esc(p.date)} · ${esc(p.method)}${p.ref?" · "+esc(p.ref):""}</small></div><div class="amount">${money(p.amount)}</div></div>`}).join("")||'<div class="empty">এখনো পেমেন্ট রেকর্ড নেই।</div>';
+const ts=document.getElementById("tenantSelect"),oldT=ts.value;ts.innerHTML=active.map(r=>`<option value="${r.id}">${esc(r.tenant)} — ${esc(r.name)}</option>`).join("");if([...ts.options].some(o=>o.value===oldT))ts.value=oldT;
+renderTenant();
+}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function toggleForm(){document.getElementById("roomForm").classList.toggle("hidden")}
+function addRoom(e){e.preventDefault();if(rooms.length>=5){toast("ডেমোতে সর্বোচ্চ ৫টি ঘর রাখা যাবে।");return}rooms.push({id:Date.now(),name:document.getElementById("roomName").value.trim(),tenant:document.getElementById("tenantName").value.trim(),phone:document.getElementById("tenantPhone").value.trim(),rent:Number(document.getElementById("rentAmount").value),paid:0});save();e.target.reset();document.getElementById("roomForm").classList.add("hidden");render();toast("ঘরের তথ্য সংরক্ষিত হয়েছে।")}
+function editRoom(id){let r=rooms.find(x=>x.id===id);if(!r)return;let tenant=prompt("ভাড়াটিয়ার নাম",r.tenant);if(tenant===null)return;let rent=prompt("মাসিক ভাড়া (টাকা)",r.rent);if(rent===null)return;let phone=prompt("মোবাইল নম্বর",r.phone||"");if(phone===null)return;r.tenant=tenant.trim()||"খালি ঘর";r.rent=Math.max(0,Number(rent)||0);r.phone=phone.trim();r.paid=Math.min(r.paid,r.rent);save();render();toast("তথ্য আপডেট হয়েছে।")}
+function removeRoom(id){let r=rooms.find(x=>x.id===id);if(!r)return;if(confirm(r.name+" মুছে ফেলবেন?")){rooms=rooms.filter(x=>x.id!==id);save();render();toast("ঘর মুছে ফেলা হয়েছে।")}}
+function selectPayment(id){document.getElementById("paymentRoom").value=id;document.getElementById("paymentAmount").value=Math.max(0,dueFor(rooms.find(r=>r.id===id)||{rent:0,paid:0}));document.getElementById("paymentAmount").focus()}
+function recordPayment(e){e.preventDefault();let id=Number(document.getElementById("paymentRoom").value),r=rooms.find(x=>x.id===id),amount=Number(document.getElementById("paymentAmount").value);if(!r||amount<=0)return;let p={id:Date.now(),roomId:id,amount,method:document.getElementById("paymentMethod").value,ref:document.getElementById("paymentRef").value.trim(),date:new Date().toISOString().slice(0,10)};payments.push(p);r.paid=Math.min(r.rent,r.paid+amount);save();render();showReceipt(p);e.target.reset();toast("পেমেন্ট রেকর্ড হয়েছে; রসিদ তৈরি হয়েছে।")}
+function showReceipt(p){let r=rooms.find(x=>x.id===p.roomId);let markup=`<div class="receipt"><h4>মেসবাড়ি — ভাড়া আদায়ের রসিদ</h4><p><strong>রসিদ নম্বর:</strong> MB-${p.id.toString().slice(-7)}</p><p><strong>তারিখ:</strong> ${esc(p.date)}</p><p><strong>ঘর:</strong> ${esc(r?r.name:"—")}</p><p><strong>ভাড়াটিয়া:</strong> ${esc(r?r.tenant:"—")}</p><p><strong>আদায়ের পরিমাণ:</strong> ${money(p.amount)}</p><p><strong>মাধ্যম:</strong> ${esc(p.method)}</p><p><strong>লেনদেন/নোট:</strong> ${esc(p.ref||"—")}</p><p><strong>বর্তমান বকেয়া:</strong> ${money(r?dueFor(r):0)}</p><div class="form-actions no-print" style="margin-top:12px"><button onclick="printReceipt()">রসিদ প্রিন্ট / PDF</button><button class="secondary" onclick="document.getElementById('receiptArea').classList.add('hidden')">বন্ধ</button></div></div>`;let area=document.getElementById("receiptArea");area.innerHTML=markup;area.classList.remove("hidden");document.getElementById("receiptPrint").innerHTML=markup;document.getElementById("receiptPrint").classList.remove("hidden")}
+function printReceipt(){window.print()}
+function renderTenant(){let id=Number(document.getElementById("tenantSelect").value),r=rooms.find(x=>x.id===id);if(!r){["tenantRent","tenantPaid","tenantDue","tenantRoom"].forEach(id=>document.getElementById(id).textContent="—");document.getElementById("tenantDetails").innerHTML='<div class="empty">মালিকের যোগ করা ভাড়াটিয়ার তথ্য এখানে দেখা যাবে।</div>';return}document.getElementById("tenantRent").textContent=money(r.rent);document.getElementById("tenantPaid").textContent=money(Math.min(r.rent,r.paid));document.getElementById("tenantDue").textContent=money(dueFor(r));document.getElementById("tenantRoom").textContent=r.name;let recent=payments.filter(p=>p.roomId===id).slice().reverse();document.getElementById("tenantDetails").innerHTML=`<div class="receipt"><h4>${esc(r.tenant)}</h4><p>ঘর: ${esc(r.name)}</p><p>মাসিক ভাড়া: <strong>${money(r.rent)}</strong></p><p>পরিশোধিত: <strong>${money(Math.min(r.rent,r.paid))}</strong></p><p>বকেয়া: <strong>${money(dueFor(r))}</strong></p><div class="divider"></div><strong>পেমেন্ট ইতিহাস</strong>${recent.map(p=>`<p>${esc(p.date)} · ${esc(p.method)} · ${money(p.amount)} <button class="secondary btn-small" onclick="tenantReceipt(${p.id})">রসিদ</button></p>`).join("")||"<p>এখনো কোনো রেকর্ড নেই।</p>"}</div>`}
+function tenantReceipt(pid){let p=payments.find(x=>x.id===pid);if(p)showReceipt(p)}
+document.getElementById("roleSelect").addEventListener("change",e=>{let owner=e.target.value==="owner";document.getElementById("ownerView").classList.toggle("hidden",!owner);document.getElementById("tenantView").classList.toggle("hidden",owner);document.getElementById("pageTitle").textContent=owner?"বাড়ির হিসাব এক জায়গায়":"আপনার ভাড়া ও রসিদ";document.getElementById("exportBtn").classList.toggle("hidden",!owner);renderTenant()});
+function exportData(){let blob=new Blob([JSON.stringify({rooms,payments,exportedAt:new Date().toISOString()},null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="mesbari-backup.json";a.click();URL.revokeObjectURL(a.href);toast("ব্যাকআপ ফাইল তৈরি হয়েছে।")}
+render();
+</script>
+</body></html>
